@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="https://cdn.shopify.com/shopifycloud/brochure/assets/landers/ppc/ecommerce/hero-small-accdfa5d4628cee00ae2a5c2694e164c1eec8b247143f59ad27dfdb232c8d819.png"/>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home" routerLinkActive="active" appCardstyle>Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/product" routerLinkActive="active" appCardstyle>Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/add-product" routerLinkActive="active" cardsty appCardstyle>Add Product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about" routerLinkActive="active" appCardstyle>About Us</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" appCardstyle>More</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/profile" routerLinkActive="active" appCardstyle>Profile</a></li>
+            <li><a class="dropdown-item" routerLink="/settings" routerLinkActive="active" appCardstyle>Settings</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" routerLink="/support" routerLinkActive="active" appCardstyle>Support</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="input-group me-3" style="max-width: 250px;">
+        <input type="text" class="form-control" placeholder="Search" aria-label="Search">
+        <span class="input-group-text">
+          <i class="fas fa-search"></i>
+        </span>
+      </div>
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/logout" routerLinkActive="active">Logout</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true"><i class="fa-solid fa-user"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

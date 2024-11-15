@@ -1,0 +1,25 @@
+.table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table thead th {
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+.table tbody tr:hover {
+  background-color: #f8f9fa;
+  cursor: pointer;
+}
+
+.table td, .table th {
+  vertical-align: middle;
+  text-align: center;
+}
+
+h2 {
+  font-family: Arial, sans-serif;
+  color: #333;
+  font-weight: bold;
+}

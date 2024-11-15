@@ -1,0 +1,12 @@
+.product-image {
+  height: 360px;
+  object-fit: cover;
+}
+.worning{
+  background-color: rgb(198, 200, 202);
+}
+.price{
+  color:gray;
+  text-decoration: line-through gray;
+}
+

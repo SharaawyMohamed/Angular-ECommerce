@@ -1,0 +1,11 @@
+a{
+  color: aliceblue;
+  margin-left: 10px;
+  font-size: 20px;
+}
+a:hover{
+  color: rgb(107, 107, 107);
+  margin-left: 10px;
+  font-size: 20px;
+
+}

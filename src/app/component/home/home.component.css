@@ -1,0 +1,99 @@
+/* home.component.css */
+
+.home-container {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Banner Section */
+.banner {
+  background-color: #f2f8f2; /* Light green or complementary shade to match logo */
+  text-align: center;
+  padding: 100px 20px;
+  color: #333;
+  border-radius: 8px;
+}
+
+.banner h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #29ecab; /* Dark green for heading */
+}
+
+.banner p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.banner .cta-button {
+  background-color: #29ecab; /* Primary green shade */
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.banner .cta-button:hover {
+  background-color: #29ecab; /* Darker green on hover */
+}
+
+/* Features Section */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 50px 0;
+}
+
+.feature-card {
+  text-align: center;
+  padding: 20px;
+  background-color: #e6f5e6; /* Light green background */
+  border-radius: 8px;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card i {
+  font-size: 2rem;
+  color: #29ecab; /* Icon color matching primary theme */
+  margin-bottom: 10px;
+}
+
+.feature-card h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #29ecab; /* Dark green for headings */
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* CTA Section */
+.cta-section {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.cta-section button {
+  padding: 0.8em 1.5em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #29ecab; /* Match button color to theme */
+  color: #fff;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.cta-section button:hover {
+  background-color: #29ecab; /* Darker green for hover effect */
+}

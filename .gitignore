@@ -1,0 +1,42 @@
+
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Compiled output
+dist/
+out-tsc/
+build/
+
+# Production environment files
+src/environments/*.prod.ts
+
+# Miscellaneous
+/.env
+
+# Logs and debugging
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs and editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Static analysis
+coverage/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo
+
+# Angular specific
+.angular/

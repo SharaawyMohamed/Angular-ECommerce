@@ -1,0 +1,23 @@
+/* Navbar brand styling */
+.navbar-brand {
+  width: 60px;
+  height: 60px;
+}
+
+.navbar-brand img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+/* Default link styling with transition */
+.nav-link {
+  transition: color 0.3s ease;
+  color: #363a3d; /* Default color */
+}
+
+/* Active link styling with lighter color */
+.nav-link.active {
+  color: #29ecab; /* Light color for active link */
+  font-size: 17px;
+}

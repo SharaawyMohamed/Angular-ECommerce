@@ -1,0 +1,43 @@
+<div class="container">
+<div class="row">
+@for(item of filterdProducts; track item.id){
+  <div class="col-md-3">
+    <div class="card mb-0 shadow-sm border-0 rounded">
+          <img [src]="item.image" class="card-img-top rounded-top product-image" alt="Product Image" appCardstyle>
+          <div class="card-body text-center">
+            <h5 class="card-title">{{ item.name }}</h5>
+            <p class="card-text text-muted small">Category: {{ item.category }}</p>
+            <p class="card-text small"[class.text-danger]="item.quantity==0">Quantity: {{ item.quantity }}</p>
+
+            <p class="card-text">Price:
+              <span class="text-danger me-2" style="text-decoration: line-through;">
+                {{ item.price | currency }}
+              </span>
+              <span class="text-success fw-bold">
+                {{ item.price | discount:30 | currency }}
+              </span>
+            </p>
+
+            <button
+            class="btn btn-lg btn-outline-success w-100 mb-2"
+            [disabled]="item.quantity == 0"
+            (click)="addProductToCard(item)"
+            [ngClass]="{'btn-disabled': item.quantity == 0}">
+            <i class="fas fa-shopping-cart me-2"></i>
+            Add to Cart
+          </button>
+
+          <button
+            class="btn btn-lg btn-outline-primary w-100"
+            [routerLink]="['/product', item.id]">
+            <i class="fas fa-eye me-2"></i>
+            View Details
+          </button>
+          </div>
+        </div>
+      </div>
+}
+@empty {
+  <div class="text-center text-danger">There is not products yet!</div>
+}
+</div>

@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="d-flex justify-content-center my-5">
+    <input type="text" name="name" class="form-control w-50" [(ngModel)]="parentSearch" placeholder="Search by product name...">
+  </div>
+</div>
+
+<app-product [childSearch]="parentSearch" (productCardsEvent)="addProductInParent($event)"></app-product>
+
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Cards:</h2>
+  <div class="table-responsive">
+      <table class="table table-bordered table-striped table-hover">
+          <thead class="table-dark">
+              <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Remove</th>
+              </tr>
+          </thead>
+          <tbody>
+      @for (item of productCards; track productCards) {
+       <tr>
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.price | currency }}</td>
+          <td>{{ item.quantity }}</td>
+          <td><button class="btn btn-danger" (click)="deleteCard(item.id)">Remove Card</button></td>
+       </tr>
+      }
+
+    </tbody>
+  </table>
+</div>
