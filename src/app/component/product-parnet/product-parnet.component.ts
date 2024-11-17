@@ -20,15 +20,12 @@ constructor() {
    addProductInParent(product:IProduct):void{
     var card=this.productCards.find((prod:IProduct)=>prod.id==product.id);
     if(!card){
-      // product.quantity=1;
-      // this.productCards.push(product);
       this.productCards.push({...product,quantity:1})
     }else{
       card.quantity++;
     }
    }
 
-   //TODO:remove object from card.
    deleteCard(id:number){
     var index=this.productCards.findIndex((card:IProduct)=>card.id==id);
     if(this.productCards[index].quantity==1){

@@ -1,12 +1,94 @@
-.product-image {
-  height: 360px;
-  object-fit: cover;
-}
-.worning{
-  background-color: rgb(198, 200, 202);
-}
-.price{
-  color:gray;
-  text-decoration: line-through gray;
+/* General container styling */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* Card Styling */
+.product-card {
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Product Image */
+.product-image {
+  height: 200px;
+  object-fit: cover;
+  background-color: #f1f1f1;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+/* Product Name */
+.product-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Product Category and Quantity */
+.product-category,
+.product-quantity {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+/* Price Styling */
+.product-price {
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.original-price {
+  color: #888;
+}
+
+.discounted-price {
+  color: #28a745; /* Bootstrap success color for discounts */
+  font-weight: 700;
+}
+
+/* Button Styling */
+.btn-outline-success {
+  border-radius: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-outline-success:hover {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.btn-outline-primary {
+  border-radius: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Disabled button */
+.btn-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .product-card {
+    margin-bottom: 20px;
+  }
+}

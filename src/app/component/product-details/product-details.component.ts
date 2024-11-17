@@ -1,38 +1,48 @@
-import { CardstyleDirective } from './../../directives/cardstyle.directive';
 import { IProduct } from './../../models/iproduct';
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../Services/product.service';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { DiscountPipe } from "../../pipes/discount.pipe";
+import { Subscriber } from 'rxjs';
 
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [CommonModule, CardstyleDirective, DiscountPipe,RouterModule],
+  imports: [CommonModule, DiscountPipe],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.css'
 })
 export class ProductDetailsComponent implements OnInit {
 // get id from router link:
-ProductDetails?:IProduct
-id:number;
+ProductDetails?:IProduct;
+Id:number;
 
 constructor(
-  private readonly _productService:ProductService,
+  private _productService:ProductService,
   productService:ProductService,
   private activeRoute:ActivatedRoute,
   private router:Router
 )
 {
 this._productService=productService;
-this.id= Number(this.activeRoute.snapshot.paramMap.get('id'));
+this.Id= Number(this.activeRoute.snapshot.paramMap.get('Id'));
 }
   ngOnInit(): void {
-    this.ProductDetails= this._productService.getProductById(this.id);
+    this.getProductById(this.Id)
     if(this.ProductDetails==null){
       this.router.navigate(['**']);
     }
 
+  }
+  getProductById(Id:number):void{
+  this._productService.getProductById(Id).subscribe({
+    next:(data:IProduct)=>{
+      this.ProductDetails=data;
+    },
+    error: (err) => {
+      console.error('Failed to fetch products', err);
+    }
+  });
   }
 }

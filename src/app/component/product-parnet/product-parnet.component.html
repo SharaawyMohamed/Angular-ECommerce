@@ -3,7 +3,6 @@
     <input type="text" name="name" class="form-control w-50" [(ngModel)]="parentSearch" placeholder="Search by product name...">
   </div>
 </div>
-
 <app-product [childSearch]="parentSearch" (productCardsEvent)="addProductInParent($event)"></app-product>
 
 <div class="container mt-5">
