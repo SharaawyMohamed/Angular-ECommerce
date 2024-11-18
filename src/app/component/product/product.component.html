@@ -3,7 +3,6 @@
     @for (item of filterdProducts.data; track item.id) {
       <div class="col-md-3 mb-4">
         <div class="card product-card shadow-sm border-0 rounded">
-          <!-- Product Image -->
           <img
             [src]="item.pictureUrl"
             class="card-img-top rounded-top product-image"
@@ -11,7 +10,6 @@
             appCardstyle
           />
 
-          <!-- Product Details -->
           <div class="card-body text-center">
             <h5 class="product-name">{{ item.name }}</h5>
             <p class="product-category text-muted small">Category: {{ item.productType }}</p>
@@ -19,7 +17,6 @@
               Quantity: {{ item.quantity }}
             </p>
 
-            <!-- Price with Discount -->
             <p class="product-price">
               <span class="original-price text-danger me-2" *ngIf="item.quantity > 0" style="text-decoration: line-through;">
                 {{ item.price | currency }}
@@ -29,7 +26,6 @@
               </span>
             </p>
 
-            <!-- Add to Cart Button -->
             <button
               class="btn btn-lg btn-outline-success w-100 mb-2"
               [disabled]="item.quantity == 0"
@@ -40,7 +36,6 @@
               Add to Cart
             </button>
 
-            <!-- View Details Button -->
             <button
               class="btn btn-lg btn-outline-primary w-100"
               [routerLink]="['/product', item.id]"
