@@ -24,7 +24,7 @@ login() {
     },
     error: (err) => {
       console.error('Login error response:', err);
-    },
+    }
   });
 }
 }

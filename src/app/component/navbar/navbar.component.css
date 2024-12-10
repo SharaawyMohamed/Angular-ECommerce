@@ -10,14 +10,16 @@
   border-radius: 20px;
 }
 
-/* Default link styling with transition */
 .nav-link {
   transition: color 0.3s ease;
-  color: #363a3d; /* Default color */
+  color: #363a3d;
 }
 
-/* Active link styling with lighter color */
 .nav-link.active {
-  color: #29ecab; /* Light color for active link */
+  color: #29ecab; 
   font-size: 17px;
+}
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

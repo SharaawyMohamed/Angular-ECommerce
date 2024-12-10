@@ -1,0 +1,96 @@
+<div class="container mt-5">
+  <p>touched:{{ displayName.touched | json }}</p>
+  <p>dirty:{{ displayName.dirty | json }}</p>
+  <p>valid:{{ displayName.valid | json }}</p>
+  <div class="form-container">
+    <h3 class="form-header">Sign Up</h3>
+
+    <form (ngSubmit)="addNewUser()" #signUpForm="ngForm" novalidate>
+      <div class="mb-4">
+        <label for="displayName" class="form-label">Full Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          placeholder="Enter your Full name"
+          required
+          [(ngModel)]="user.displayName"
+          name="displayName"
+          #displayName="ngModel"
+          minlength="3"
+          [ngClass]="{
+            'is-invalid': (displayName.dirty || displayName.touched) && displayName.invalid,
+            'is-valid': displayName.valid
+          }"
+        />
+        <div class="invalid-feedback" *ngIf="displayName.invalid && (displayName.dirty || displayName.touched)">
+          <span *ngIf="displayName.errors?.['required']">First name is required.</span>
+          <span *ngIf="displayName.errors?.['minlength']">Must be at least 3 characters.</span>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <label for="email" class="form-label">Email Address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="Enter your email"
+          required
+          [(ngModel)]="user.email"
+          name="email"
+          #Email="ngModel"
+          [ngClass]="{
+            'is-invalid': (Email.dirty || Email.touched) && Email.invalid,
+            'is-valid': Email.valid
+          }"
+        />
+        <div class="invalid-feedback" *ngIf="Email.invalid && (Email.dirty || Email.touched)">
+          <span *ngIf="Email.errors?.['required']">Email is required.</span>
+          <span *ngIf="Email.errors?.['email']">Invalid email format.</span>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <label for="phoneNumber" class="form-label">Phone Number</label>
+        <input
+          type="text"
+          class="form-control"
+          id="phoneNumber"
+          placeholder="Enter your phone number"
+          required
+          [(ngModel)]="user.phoneNumber"
+          name="phoneNumber"
+        />
+      </div>
+
+      <div class="mb-4">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          placeholder="Enter your password"
+          required
+          [(ngModel)]="user.password"
+          name="password"
+        />
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-custom w-20"
+        [disabled]="signUpForm.invalid"
+      >
+        Register
+      </button>
+    </form>
+
+    <div class="form-footer">
+      <p>
+        Already have an account?
+        <a href="login" class="text-decoration-none">Login</a>
+      </p>
+    </div>
+  </div>
+</div>
