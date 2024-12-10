@@ -17,12 +17,12 @@ import { IProductResponse } from '../../models/iproduct-response';
 })
 export class ProductComponent implements OnInit {
   filterdProducts!:IProductResponse;
-
   constructor(private _productService: ProductService) {
   }
 
   ngOnInit(): void {
     this.getAllProducts();
+
   }
 
   getAllProducts(): void {
@@ -43,7 +43,12 @@ export class ProductComponent implements OnInit {
       console.warn('Products are not yet loaded.');
       return;
     }
-    this.filterdProducts.data = this._productService.searchLogic(searchValue) || [];
+
+   this._productService.searchLogic(searchValue).subscribe({
+    next:(data:IProductResponse)=>{
+      this.filterdProducts=data;
+    }
+   })
   }
 
   @Output() productCardsEvent: EventEmitter<IProduct> = new EventEmitter<IProduct>();

@@ -16,16 +16,6 @@ export class HomeComponent implements OnInit{
  public Categories:ICategory[]=[];
  public Brands:IBrand[]=[];
   constructor(private _brandService:BrandService,private _categoryService:CategoryService) {
-
-    // this.productService.getAllProducts().subscribe({
-    //   next:(data:any)=>{
-    //     this.Products=data;
-    //   },
-    //   error:(er)=>{
-    //     console.error("Error:",er);
-    //   }
-    // });
-    //console.log(this.Products);
   }
   ngOnInit(): void {
     this.loadCategories();
@@ -35,19 +25,18 @@ export class HomeComponent implements OnInit{
     this._categoryService.getAllCategories().subscribe({
       next:(data:ICategory[])=>{
         this.Categories=data;
-        console.log(data);
+        console.log("Categories: ",data);
       },
       error:(er)=>{
         console.error("Error:",er);
       }
     });
   }
-
   loadBrands(){
     this._brandService.getAllBrands().subscribe({
       next:(data:IBrand[])=>{
         this.Brands=data;
-        console.log(data);
+        console.log("Brands: ",data);
       },
       error:(er)=>{
         console.error("Error:",er);
